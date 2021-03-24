@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="993866de-9e16-4c7d-b68f-93b7593957f2" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<http:listener-config name="HTTP_Listener_config3" doc:name="HTTP Listener config" doc:id="4d560aad-0e01-49c3-ac0f-ba79d8832d80" >
+		<http:listener-connection host="localhost" port="8083" />
+	</http:listener-config>
+	<flow name="test1flow" doc:id="34cbbd5d-6049-47d1-883c-c21e7e4c148b" >
+		<http:listener doc:name="Listener" doc:id="acbc7c52-5392-4d3d-a6f9-6b742ffb4c37" config-ref="HTTP_Listener_config3" path="/test1"/>
+		<set-payload value='#["calling /test1"]' doc:name="Set Payload" doc:id="226949e6-8b84-4b92-88e8-c142c487675c" />
+	</flow>
+</mule>

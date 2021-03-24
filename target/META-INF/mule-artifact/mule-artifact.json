@@ -1,0 +1,28 @@
+{
+  "configs": [
+    "test2.xml",
+    "globalconfiguration.xml",
+    "test3.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:globalconfiguration:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.3.0",
+  "requiredProduct": "MULE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "globalconfiguration.xml",
+        "log4j2.xml",
+        "test2.xml",
+        "test3.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
